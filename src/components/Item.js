@@ -4,7 +4,7 @@ export default class Item extends Component {
     render() {
         return (
 
-            <div className="card col-md-4 m-1 p-0 " style={{width: "20rem"}}>
+            <div className={`card ${"text-bg-"+this.props.mode} col-md-4 m-1 p-0 `} style={{width: "20rem"}}>
                 <img src={this.props.imageUrl} className="card-img-top" alt="..." style={{height:"13rem"}}/>
                 <div className="card-body">
                     <h5 className="card-title">{this.props.title}</h5>
