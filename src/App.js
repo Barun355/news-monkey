@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Items from './components/Items';
+import Navbar from './components/Navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+
+  apikey = "6d4f9824d68a4f029b1d93949aab27c8";
+  country = "in";
+  category = "sports";
+  page = 1;
+  pageSize = 18;
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<Items apikey={this.apikey} country={this.country} category="general" page={this.page} pageSize={this.pageSize} key="general" />} />
+            <Route exact path="/business" element={<Items apikey={this.apikey} country={this.country} category="business" page={this.page} pageSize={this.pageSize} key="business" />} />
+            <Route exact path="/sports" element={<Items apikey={this.apikey} country={this.country} category="sports" page={this.page} pageSize={this.pageSize} key="sports" />} />
+            <Route exact path="/entertainment" element={<Items apikey={this.apikey} country={this.country} category="entertainment" page={this.page} pageSize={this.pageSize} key="entertainment" />} />
+            <Route exact path="/health" element={<Items apikey={this.apikey} country={this.country} category="health" page={this.page} pageSize={this.pageSize} key="health" />} />
+            <Route exact path="/science" element={<Items apikey={this.apikey} country={this.country} category="science" page={this.page} pageSize={this.pageSize} key="science" />} />
+            <Route exact path="/technology" element={<Items apikey={this.apikey} country={this.country} category="technology" page={this.page} pageSize={this.pageSize} key="technology" />} />
+            
+          </Routes>
+        </div>
+      </BrowserRouter>
+    )
+  }
 }
-
-export default App;
