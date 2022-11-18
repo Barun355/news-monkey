@@ -4,7 +4,7 @@ export default class Loader extends Component {
   render() {
     return (
       <div className="text-center">
-        <img className="m-4" src={loader} alt="loader" />
+        <img className="m-4" src={loader} alt="loader"  style={{height: "2rem", width: "2rem"}}/>
       </div>
     )
   }

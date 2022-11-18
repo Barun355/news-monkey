@@ -11,7 +11,7 @@ export default class App extends Component {
   country = "in";
   category = "sports";
   page = 1;
-  pageSize = 9;
+  pageSize = 3;
 
   constructor() {
     super();
