@@ -11,7 +11,7 @@ export default class App extends Component {
   country = "in";
   category = "sports";
   page = 1;
-  pageSize = 3;
+  pageSize = 9;
 
   constructor() {
     super();
@@ -51,7 +51,6 @@ export default class App extends Component {
             <Route exact path="/health" element={<Items mode={this.state.mode} apikey={this.apikey} country={this.country} category="health" page={this.page} pageSize={this.pageSize} key="health" />} />
             <Route exact path="/science" element={<Items mode={this.state.mode} apikey={this.apikey} country={this.country} category="science" page={this.page} pageSize={this.pageSize} key="science" />} />
             <Route exact path="/technology" element={<Items mode={this.state.mode} apikey={this.apikey} country={this.country} category="technology" page={this.page} pageSize={this.pageSize} key="technology" />} />
-
           </Routes>
         </div>
       </BrowserRouter>

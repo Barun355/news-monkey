@@ -8,7 +8,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <div>
-                <nav className={`navbar navbar-expand-lg bg-${this.props.mode} navbar-${this.props.mode}`}>
+                <nav className={`navbar fixed-top navbar-expand-lg bg-${this.props.mode} navbar-${this.props.mode}`}>
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">RF News</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@ export default class Navbar extends Component {
                                 <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
                                 <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>
                             </ul>
-                            <div className="mode p-2" onClick={this.props.toggle}>
+                            <div className="mode p-2" onClick={this.props.toggle} style={{cursor: "pointer"}}>
                                 <img src={Light} alt="lightMode" style={{ height: "3rem", width: "3rem" }} hidden={!this.props.darkMode} />
                                 <img src={Dark} alt="darkMode" style={{ height: "3rem", width: "3rem" }} hidden={this.props.darkMode} />
                             </div>
